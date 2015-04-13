@@ -12,10 +12,14 @@ MarketPlaceApi::Application.routes.draw do
 # controllers folder, in our case the api/ directory.
 
   namespace :api, defaults: { format: :json },
-                  constraints: { subdomain: 'api' }, path: '/' do
+    constraints: { subdomain: 'api' }, path: '/' do
+      scope module: :v1,
+            constraints: ApiConstraints.new(version: 1, default: true) do
 
-  #   listing our resources here
-  end
+
+      end
+    end
 
 
 end
+
