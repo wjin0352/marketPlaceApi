@@ -20,7 +20,7 @@ MarketPlaceApi::Application.routes.draw do
       scope module: :v1,
             constraints: ApiConstraints.new(version: 1, default: true) do
         # we are going to list resources below
-        resources :users, :only => [:show, :create, :update]
+        resources :users, :only => [:show, :create, :update, :destroy]
 
       end
     end

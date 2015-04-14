@@ -4,6 +4,7 @@ describe Api::V1::UsersController do
   before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1" }
 
   describe "GET #show" do
+
     before(:each) do
       @user = FactoryGirl.create :user
       get :show, id: @user.id, format: :json
@@ -96,6 +97,19 @@ describe Api::V1::UsersController do
 
     end
   end
+
+
+  describe "DELETE #destroy" do
+
+    before(:each) do
+      @user = FactoryGirl.create :user
+      delete :destroy, { id: @user.id }, format: :json
+    end
+
+    it { should respond_with 204 }
+
+  end
+
 
 end
 
