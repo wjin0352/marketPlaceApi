@@ -13,11 +13,14 @@ MarketPlaceApi::Application.routes.draw do
 # Defining namespace under 'api', By defining a namespace under the routes.rb file. Rails will
 # automatically map that namespace to a directory matching the name under the
 # controllers folder, in our case the api/ directory.
-
+  # Api definition
   namespace :api, defaults: { format: :json },
                   constraints: { subdomain: 'api' }, path: '/' do
+
       scope module: :v1,
             constraints: ApiConstraints.new(version: 1, default: true) do
+        # we are going to list resources below
+        resources :users, :only => [:show]
 
       end
     end
