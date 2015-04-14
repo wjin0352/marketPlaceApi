@@ -1,4 +1,7 @@
+require 'api_constraints'
+
 MarketPlaceApi::Application.routes.draw do
+  devise_for :users
 # we are just going to set the constraints,
 # the base_uri and the default response format for each request.
 
@@ -12,10 +15,9 @@ MarketPlaceApi::Application.routes.draw do
 # controllers folder, in our case the api/ directory.
 
   namespace :api, defaults: { format: :json },
-    constraints: { subdomain: 'api' }, path: '/' do
+                  constraints: { subdomain: 'api' }, path: '/' do
       scope module: :v1,
             constraints: ApiConstraints.new(version: 1, default: true) do
-
 
       end
     end

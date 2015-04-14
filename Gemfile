@@ -14,7 +14,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-
 #Api gems
 gem 'active_model_serializers'
 
@@ -36,3 +35,4 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'devise'
