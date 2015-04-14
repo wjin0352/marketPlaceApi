@@ -1,6 +1,7 @@
 require 'api_constraints'
 
 MarketPlaceApi::Application.routes.draw do
+  mount SabisuRails::Engine => "/sabisu_rails"
   devise_for :users
 # we are just going to set the constraints,
 # the base_uri and the default response format for each request.
