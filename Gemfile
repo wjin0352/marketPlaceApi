@@ -39,7 +39,8 @@ end
 gem 'devise'
 gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
 gem 'compass-rails'
-gem 'furatto'
+gem 'furatto', '1.3.7' # version 1.3.7 fixed my issues with login & sass file not being read
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'better_errors'
+# gem 'compass-rails', '1.1.7'
